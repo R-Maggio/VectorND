@@ -1,0 +1,4 @@
+<map id="VectorND::Vector::squaredDist" name="VectorND::Vector::squaredDist">
+<area shape="rect" id="node1" title="return the squared distance between 2 vectors a and b (static function)" alt="" coords="5,5,224,32"/>
+<area shape="rect" id="node2" href="$classVectorND_1_1Vector.html#a9cebed664a5f7b5f1ce82d64a9adcf21" title="return the absolute squared norm of a vector" alt="" coords="272,5,500,32"/>
+</map>

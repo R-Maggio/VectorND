@@ -1,0 +1,4 @@
+<map id="VectorND::Vector::dist" name="VectorND::Vector::dist">
+<area shape="rect" id="node1" title="return the euclidean distance between 2 vectors" alt="" coords="5,5,169,32"/>
+<area shape="rect" id="node2" href="$classVectorND_1_1Vector.html#a805ca5db3160a7a331ca91ad4e369e1f" title="return the euclidean norm of a vector" alt="" coords="217,5,392,32"/>
+</map>
