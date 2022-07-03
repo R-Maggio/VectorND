@@ -138,7 +138,7 @@ public:
      * @param scalar 
      * @return Vector 
      */
-    Vector operator*(T scalar);
+    Vector operator*(T scalar) const;
 
     /**
      * @brief return result of multiplying a scalar by a vecor
@@ -438,7 +438,7 @@ T Vector<T, N>::dot(const Vector<T, N>& otherVector) const {
 }
 
 template <typename T, size_t N>
-Vector<T, N> Vector<T, N>::operator*(T scalar) {
+Vector<T, N> Vector<T, N>::operator*(T scalar) const {
     Vector<T, N> result;
     for (size_t i = 0; i < N; i++) {
         result.data[i] = scalar * data[i];
