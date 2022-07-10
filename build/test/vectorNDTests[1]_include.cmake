@@ -1,5 +1,0 @@
-if(EXISTS "/home/raf/VectorND/build/test/vectorNDTests[1]_tests.cmake")
-  include("/home/raf/VectorND/build/test/vectorNDTests[1]_tests.cmake")
-else()
-  add_test(vectorNDTests_NOT_BUILT vectorNDTests_NOT_BUILT)
-endif()

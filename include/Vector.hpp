@@ -359,6 +359,13 @@ public:
         os << "]";
         return os;
     }
+
+    /**
+     * @brief return a reference on a const std::array of the vector data
+     * 
+     * @return const std::array<T, N>& the data
+     */
+    inline const std::array<T, N>& arrayView() const { return data; }
 };
 
 

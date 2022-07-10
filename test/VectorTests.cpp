@@ -327,6 +327,18 @@ TEST(VectorTests, iterator) {
     }
 }
 
+TEST(VectorTests, arrayView) {
+    // test arrayView
+    Vector<double, 5> vf1{{1., 2., 3., 4., 5.}};
+    auto arr = vf1.arrayView();
+    EXPECT_EQ(arr.size(), 5);
+    EXPECT_EQ(arr[0], 1.);
+    EXPECT_EQ(arr[1], 2.);
+    EXPECT_EQ(arr[2], 3.);
+    EXPECT_EQ(arr[3], 4.);
+    EXPECT_EQ(arr[4], 5.);
+}
+
     //************ TESTS with double ************
     // auto v1 = Vector<double, 3>({1, 2, 3});
     // Vector<double, 2> vector = Vector<double, 2>(1, 2);
