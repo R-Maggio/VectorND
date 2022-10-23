@@ -298,87 +298,24 @@ TEST(VectorTests, iterator) {
     }
 }
 
-TEST(VectorTests, arrayView) {
-    // test arrayView
+TEST(VectorTests, cast) {
+    // test casting to an array by reference
     Vector<double, 5> vf1{{1., 2., 3., 4., 5.}};
-    auto arr = vf1.arrayView();
-    EXPECT_EQ(arr.size(), 5);
-    EXPECT_EQ(arr[0], 1.);
+    std::array<double, 5> &arr = vf1;
+    arr[0] = 0.;
+    EXPECT_EQ(arr[0], 0.);
+    EXPECT_EQ(vf1[0], 0.);
     EXPECT_EQ(arr[1], 2.);
     EXPECT_EQ(arr[2], 3.);
     EXPECT_EQ(arr[3], 4.);
-    EXPECT_EQ(arr[4], 5.);
+
+    // test casting to an array by value
+    Vector<double, 5> vf2{{1., 2., 3., 4., 5.}};
+    std::array<double, 5> arr2 = vf2;
+    arr2[0] = 0.;
+    EXPECT_EQ(arr2[0], 0.);
+    EXPECT_EQ(vf2[0], 1.);
+    EXPECT_EQ(arr2[1], 2.);
+    EXPECT_EQ(arr2[2], 3.);
+    EXPECT_EQ(arr2[3], 4.);
 }
-
-    //************ TESTS with double ************
-    // auto v1 = Vector<double, 3>({1, 2, 3});
-    // Vector<double, 2> vector = Vector<double, 2>(1, 2);
-    // std::cout << vector << '\n';
-
-    // std::cout << "Vector<double, 2>(vector);" << '\n';
-    // std::cout << Vector<double, 2>(vector) << '\n';
-
-    // std::cout << "vector;" << '\n';
-    // std::cout << vector << '\n';
-
-    // std::cout << "vector.set(4, 10);" << '\n';
-    // vector.set(4, 10);
-    // std::cout << vector << '\n';
-
-    // std::cout << "vector = Vector<double, 2>(2, 3)" << '\n';
-    // vector = Vector<double, 2>(2, 3);
-    // std::cout << vector << '\n';
-
-    // std::cout << "vector + Vector<double, 2>(1, 1)" << '\n';
-    // std::cout << vector + Vector<double, 2>(1, 1) << '\n';
-
-    // std::cout << "vector - Vector<double, 2>(1, 1)" << '\n';
-    // std::cout << vector - Vector<double, 2>(1, 1) << '\n';
-
-    // std::cout << "vector += Vector<double, 2>(1, 1);" << '\n';
-    // vector += Vector<double, 2>(1, 1);
-    // std::cout << vector << '\n';
-
-    // std::cout << "vector -= Vector<double, 2>(1, 1);" << '\n';
-    // vector -= Vector<double, 2>(1, 1);
-    // std::cout << vector << '\n';
-
-    // std::cout << "vector.dot(Vector<double, 2>(2, 2))" << '\n';
-    // std::cout << vector.dot(Vector<double, 2>(2, 2)) << '\n';
-
-    // std::cout << "0.5*vector" << '\n';
-    // std::cout << 0.5*vector << '\n';
-
-    // std::cout << "vector*0.5" << '\n';
-    // std::cout << vector*0.5 << '\n';
-
-    // vector *= 0.5;
-    // std::cout << "vector *= 0.5" << '\n';
-    // std::cout << vector << '\n';
-
-    // std::cout << "Vector<double, 2>(-12.7, 1500.9) % 10.5" << '\n';
-    // std::cout << Vector<double, 2>(-12.7, 1500.9) % 10.5 << '\n';
-
-    // std::cout << "vector.norm()" << '\n';
-    // std::cout << vector.norm() << '\n';
-
-    // std::cout << "Vector<double, 2>::norm(vector)" << '\n';
-    // std::cout << Vector<double, 2>::norm(vector) << '\n';
-
-    // std::cout << "Vector<double, 2>::squaredNorm(vector)" << '\n';
-    // std::cout << Vector<double, 2>::squaredNorm(vector) << '\n';
-
-    // std::cout << "vector.squaredNorm()" << '\n';
-    // std::cout << vector.squaredNorm() << '\n';
-
-    // std::cout <<  "Vector<double, 2>(2, 3).PeriodicDiff(Vector<double, 2>(8, 9), Vector<double, 2>(10., 10.))" << '\n';
-    // std::cout <<  Vector<double, 2>(2, 3).PeriodicDiff(Vector<double, 2>(8, 9), Vector<double, 2>(10., 10.)) << '\n';
-
-    // std::cout <<  "Vector<double, 2>(8, 9).PeriodicDiff(Vector<double, 2>(2, 3), Vector<double, 2>(10., 10.))" << '\n';
-    // std::cout <<  Vector<double, 2>(8, 9).PeriodicDiff(Vector<double, 2>(2, 3), Vector<double, 2>(10., 10.)) << '\n';
-
-    // std::cout << "Vector<double, 2>::dist(Vector<double, 2>(1, 2), Vector<double, 2>(5, 4))" << '\n';
-    // std::cout << Vector<double, 2>::dist(Vector<double, 2>(1, 2), Vector<double, 2>(5, 4)) << '\n';
-
-    // std::cout << "Vector<double, 2>::squaredDist(Vector<double, 2>(1, 2), Vector<double, 2>(5, 4))" << '\n';
-    // std::cout << Vector<double, 2>::squaredDist(Vector<double, 2>(1, 2), Vector<double, 2>(5, 4)) << '\n';

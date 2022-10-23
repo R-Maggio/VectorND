@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['periodicdiff_24',['periodicDiff',['../classVectorND_1_1Vector.html#a130b4a74c0bb96743a746c5e61521f76',1,'VectorND::Vector']]]
+  ['reverse_26',['reverse',['../classVectorND_1_1Vector.html#a0a75e478b9b077367e45809aca5ee2e0',1,'VectorND::Vector']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['size_26',['size',['../classVectorND_1_1Vector.html#a6b13333d62eb39e0ff846adb88001313',1,'VectorND::Vector']]],
-  ['squareddist_27',['squaredDist',['../classVectorND_1_1Vector.html#a9215d54fa75cc3c1b5863a925dc10d51',1,'VectorND::Vector::squaredDist(const Vector &amp;a, const Vector &amp;b)'],['../classVectorND_1_1Vector.html#ab345a6ffcba367bb1272e037484130c7',1,'VectorND::Vector::squaredDist(const Vector &amp;otherVector) const']]],
-  ['squarednorm_28',['squaredNorm',['../classVectorND_1_1Vector.html#ac9beca9cf8dbe57cd4f6fa8cd6a63068',1,'VectorND::Vector::squaredNorm(const Vector &amp;vector)'],['../classVectorND_1_1Vector.html#a9cebed664a5f7b5f1ce82d64a9adcf21',1,'VectorND::Vector::squaredNorm() const']]]
+  ['vector_30',['Vector',['../classVectorND_1_1Vector.html',1,'VectorND::Vector&lt; T, N &gt;'],['../classVectorND_1_1Vector.html#a0a85558742e1a04b820c9d238d2ab184',1,'VectorND::Vector::Vector()'],['../classVectorND_1_1Vector.html#ab73a51dd779b23c3c8acb3e7c67b4ced',1,'VectorND::Vector::Vector(const Vector &amp;v)'],['../classVectorND_1_1Vector.html#a3bfe38d7f862154c4c47307b0aba718b',1,'VectorND::Vector::Vector(const std::array&lt; T, N &gt; &amp;data)']]],
+  ['vector_2ehpp_31',['Vector.hpp',['../Vector_8hpp.html',1,'']]],
+  ['vectornd_32',['VectorND',['../namespaceVectorND.html',1,'']]]
 ];

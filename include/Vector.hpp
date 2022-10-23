@@ -43,6 +43,10 @@ public:
     inline const_iterator cend() const noexcept { return data.data() + N; }
     //**----------
 
+    /// cast to std::array
+    inline operator std::array<T, N>() const { return data; }
+    inline operator std::array<T, N>&() { return data; }
+
     /**
      * @brief Operator for the casting to one vector to another
      * 
@@ -350,12 +354,6 @@ public:
         return os;
     }
 
-    /**
-     * @brief return a reference on a const std::array of the vector data
-     * 
-     * @return const std::array<T, N>& the data
-     */
-    inline const std::array<T, N>& arrayView() const { return data; }
 };
 
 
