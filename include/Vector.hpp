@@ -4,8 +4,6 @@
 #include <cmath> // sqrt
 #include <iomanip> // std::setprecision
 
-// TODO: periodicDiff static ?
-// TODO: periodicDiff: add parameter precise which boundary is periodic
 // TODO: add scalar adition to Vector
 // TODO: add %= for consistency
 // TODO: add inline functions where possible
@@ -306,14 +304,6 @@ public:
      * @return double 
      */
     double squaredDist(const Vector& otherVector) const;
-    
-    /**
-     * @brief compute v1 - v2 ("vectorial distance" distance) with periodic boundaries
-     * 
-     * @param otherVector 
-     * @return Vector 
-     */
-    Vector periodicDiff(const Vector& otherVector, const Vector& domainSize) const;
 
     /**
      * @brief reverse the order of the elements: {x,y} => {y,x}
@@ -582,20 +572,6 @@ double Vector<T, N>::squaredDist(const Vector<T, N>& a, const Vector<T, N>& b) {
 template <typename T, size_t N>
 double Vector<T, N>::squaredDist(const Vector<T, N>& otherVector) const {
     return Vector<T, N>::squaredNorm(*this - otherVector);
-}
-
-template <typename T, size_t N>
-Vector<T, N> Vector<T, N>::periodicDiff(const Vector<T, N>& otherVector, const Vector<T, N>& domainSize) const {
-    // we compute the "true" difference with periodic boundaries
-    auto diff = *this - otherVector;
-    for (size_t i = 0; i < N; i++) {
-        if (diff[i] > domainSize[i] / 2.) {
-            diff[i] -= domainSize[i];
-        } else if (diff[i] < -domainSize[i] / 2.) {
-            diff[i] += domainSize[i];
-        }
-    }
-    return diff;
 }
 
 template <typename T, size_t N>

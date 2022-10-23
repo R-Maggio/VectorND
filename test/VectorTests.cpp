@@ -253,35 +253,6 @@ TEST(VectorTests, norm) {
     EXPECT_DOUBLE_EQ(vi2.squaredDist(vi3), squared1);
 }
 
-TEST(VectorTests, periodicDiff) {
-    // test periodicDiff
-    Vector<double, 2> d1{{10., 10.}};
-    Vector<double, 2> vf1({1., 1.});
-    Vector<double, 2> vf2({9., 9.});
-    auto diff1 = vf1.periodicDiff(vf2, d1);
-    EXPECT_EQ(diff1, (Vector<double, 2>({2., 2.})));
-    // another test
-    Vector<double, 2> vf3{{1., 4.}};
-    Vector<double, 2> vf4({9., 5.});
-    auto diff2 = vf3.periodicDiff(vf4, d1);
-    auto diff3 = vf4.periodicDiff(vf3, d1);
-    EXPECT_EQ(diff2, (Vector<double, 2>({2., -1.})));
-    EXPECT_EQ(diff3, (Vector<double, 2>({-2., 1.})));
-
-    // test periodicDiff with intergers
-    Vector<int, 2> vi1({1, 1});
-    Vector<int, 2> vi2({9, 9});
-    auto diff4 = vi1.periodicDiff(vi2, d1);
-    EXPECT_EQ(diff4, (Vector<int, 2>({2, 2})));
-    // another test
-    Vector<int, 2> vi3({1, 4});
-    Vector<int, 2> vi4({9, 5});
-    auto diff5 = vi3.periodicDiff(vi4, d1);
-    auto diff6 = vi4.periodicDiff(vi3, d1);
-    EXPECT_EQ(diff5, (Vector<int, 2>({2, -1})));
-    EXPECT_EQ(diff6, (Vector<int, 2>({-2, 1})));
-}
-
 TEST(VectorTests, reverse) {
     // test reverse
     Vector<double, 5> vf1{{1., 2., 3., 4., 5.}};
