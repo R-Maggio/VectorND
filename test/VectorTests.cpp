@@ -312,10 +312,16 @@ TEST(VectorTests, cast) {
     // test casting to an array by value
     Vector<double, 5> vf2{{1., 2., 3., 4., 5.}};
     std::array<double, 5> arr2 = vf2;
+    std::array<double, 5> arr3 = static_cast<std::array<double, 5>>(vf2);
     arr2[0] = 0.;
     EXPECT_EQ(arr2[0], 0.);
     EXPECT_EQ(vf2[0], 1.);
     EXPECT_EQ(arr2[1], 2.);
     EXPECT_EQ(arr2[2], 3.);
     EXPECT_EQ(arr2[3], 4.);
+    // same for static cast
+    EXPECT_EQ(arr3[0], 1.);
+    EXPECT_EQ(arr3[1], 2.);
+    EXPECT_EQ(arr3[2], 3.);
+    EXPECT_EQ(arr3[3], 4.);
 }
